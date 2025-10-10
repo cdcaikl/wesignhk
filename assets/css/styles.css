@@ -67,3 +67,13 @@ a:hover{text-decoration:underline}
 .footer-light{background:var(--surface)}
 footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:28px 0}
 footer h4{margin:0 0 8px}
+/* Fix: brand logo size in navbar */
+.nav .brand .brand-logo{
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  object-fit: contain;   /* 防止拉伸 */
+  display: block;
+  border-radius: 6px;
+}
