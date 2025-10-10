@@ -101,3 +101,15 @@ footer h4{margin:0 0 10px}
   .cards{grid-template-columns:1fr}
   form .grid{grid-template-columns:1fr}
 }
+.cookie-backdrop{position:fixed;inset:0;background:rgba(2,6,23,.45);
+  -webkit-backdrop-filter:saturate(1.1) blur(2px);backdrop-filter:saturate(1.1) blur(2px);
+  display:none;z-index:1000}
+.cookie-modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(560px,92vw);background:#fff;color:#0f172a;border:1px solid #e5e7eb;border-radius:16px;
+  box-shadow:0 24px 60px rgba(15,23,42,.18);padding:18px;display:none;z-index:1001}
+.cookie-modal.show,.cookie-backdrop.show{display:block}
+.cookie-modal h3{margin:6px 0 8px;font-size:20px}
+.cookie-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+.cookie-btn{padding:10px 14px;border-radius:10px;border:1px solid #dbe1f1;font-weight:700;cursor:pointer}
+.cookie-btn.primary{background:#2563eb;color:#fff;border-color:transparent}
+.cookie-btn.ghost{background:#fff}

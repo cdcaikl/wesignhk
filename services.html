@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- GA4（WeSignHK）：默认先拒绝，待同意后再开启 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D4KXSV67GL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+
+  // 先“拒绝”非必要存储（合规做法）
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted'
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-D4KXSV67GL', { anonymize_ip: true });
+</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Services | We Sign</title>
@@ -78,6 +95,6 @@
   </div>
   <div class="container tiny muted">© 2025 WESIGN TECHNOLOGIES LIMITED.</div>
 </footer>
-
+<script src="/assets/js/site.js"></script>
 </body>
 </html>
