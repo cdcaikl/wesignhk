@@ -1,1 +1,10 @@
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'><url><loc>/index.html</loc></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.wesignhk.com/index.html</loc></url>
+  <url><loc>https://www.wesignhk.com/company.html</loc></url>
+  <url><loc>https://www.wesignhk.com/services.html</loc></url>
+  <url><loc>https://www.wesignhk.com/environment.html</loc></url>
+  <url><loc>https://www.wesignhk.com/contact.html</loc></url>
+  <url><loc>https://www.wesignhk.com/privacy.html</loc></url>
+  <url><loc>https://www.wesignhk.com/terms.html</loc></url>
+  <url><loc>https://www.wesignhk.com/compliance.html</loc></url>
+</urlset>
