@@ -1,61 +1,26 @@
 
-(function () {
-  document.addEventListener('DOMContentLoaded', function () {
-    var current = location.pathname.replace(/\/+\$/, '') || '/';
-    if (current === '/') current = '/index.html';
-    document.querySelectorAll('.nav a[href]').forEach(function (a) {
-      try {
-        var link = new URL(a.getAttribute('href'), location.origin).pathname.replace(/\/+\$/, '') || '/';
-        if (link === current || (link === '/index.html' && current === '/')) a.classList.add('active');
-      } catch(_) {}
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    var current=location.pathname.replace(/\/+$/,'')||'/'; if(current==='/') current='/index.html';
+    document.querySelectorAll('.nav a[href]').forEach(function(a){
+      try{var link=new URL(a.getAttribute('href'),location.origin).pathname.replace(/\/+$/,'')||'/';
+      if(link===current||(link==='/index.html'&&current==='/')) a.classList.add('active');}catch(_){}
     });
   });
-  var KEY = 'cookieConsent';
-  function updateConsent(val) {
-    try { localStorage.setItem(KEY, val); } catch(e){}
-    if (typeof gtag === 'function') {
-      gtag('consent','update',{
-        analytics_storage: val === 'granted' ? 'granted':'denied',
-        ad_storage: 'denied'
-      });
-    }
+  var KEY='cookieConsent';
+  function update(val){try{localStorage.setItem(KEY,val);}catch(e){}
+    if(typeof gtag==='function'){gtag('consent','update',{analytics_storage:val==='granted'?'granted':'denied',ad_storage:'denied'});}}
+  function show(){var saved=null;try{saved=localStorage.getItem(KEY);}catch(e){}
+    if(saved){update(saved);return;}
+    var b=document.createElement('div');b.className='cookie-backdrop';
+    var m=document.createElement('div');m.className='cookie-modal';
+    m.innerHTML='<h3>Cookies & Analytics</h3><p>We use essential cookies and optional analytics (GA4).</p><p>See our <a href="/privacy.html" target="_blank">Privacy Policy</a>.</p><div class="cookie-actions"><button class="cookie-btn ghost" id="decline">Decline</button><button class="cookie-btn primary" id="accept">Accept</button></div>';
+    document.body.appendChild(b);document.body.appendChild(m);b.classList.add('show');m.classList.add('show');
+    m.querySelector('#accept').onclick=function(){update('granted');b.remove();m.remove();};
+    m.querySelector('#decline').onclick=function(){update('denied');b.remove();m.remove();};
   }
-  function showConsentModal() {
-    var saved = null; try { saved = localStorage.getItem(KEY); } catch(e){}
-    if (saved) { updateConsent(saved); return; }
-    var backdrop = document.createElement('div');
-    backdrop.className = 'cookie-backdrop';
-    var modal = document.createElement('div');
-    modal.className = 'cookie-modal';
-    modal.innerHTML =
-      '<h3>Cookies & Analytics</h3>'+
-      '<p style="margin:0 0 8px;">We use essential cookies and optional analytics (GA4) to improve the site.</p>'+
-      '<p style="margin:0 0 8px;">See our <a href="/privacy.html" target="_blank">Privacy Policy</a>.</p>'+
-      '<div class="cookie-actions">'+
-        '<button class="cookie-btn ghost" id="cookie-decline">Decline</button>'+
-        '<button class="cookie-btn primary" id="cookie-accept">Accept</button>'+
-      '</div>';
-    document.body.appendChild(backdrop); document.body.appendChild(modal);
-    backdrop.classList.add('show'); modal.classList.add('show');
-    document.getElementById('cookie-accept').onclick = function(){ updateConsent('granted'); backdrop.remove(); modal.remove(); };
-    document.getElementById('cookie-decline').onclick = function(){ updateConsent('denied'); backdrop.remove(); modal.remove(); };
-  }
-  document.addEventListener('DOMContentLoaded', showConsentModal);
-  document.addEventListener('click', function (e) {
-    if (e.target && e.target.id === 'manage-cookies') {
-      e.preventDefault();
-      try { localStorage.removeItem(KEY); } catch(e){}
-      showConsentModal();
-    }
+  document.addEventListener('DOMContentLoaded',show);
+  document.addEventListener('submit',function(e){var f=e.target.closest('#contact-form');if(!f) return;
+    try{var d=new FormData(f); if(typeof gtag==='function'){gtag('event','generate_lead',{form_name:'contact',company:d.get('company')||'',country:d.get('country')||''});}}catch(_){}
   });
-  function sendEvent(name, params) { if (typeof gtag === 'function') gtag('event', name, params || {}); }
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest('a.btn'); if (!a) return;
-    if (/Contact Sales/i.test(a.textContent)) sendEvent('contact_cta_click',{ location:'hero' });
-    if (/Explore Services|サービスを見る/i.test(a.textContent)) sendEvent('explore_services_click',{ location:'hero' });
-  });
-  document.addEventListener('submit', function (e) {
-    var form = e.target.closest('#contact-form'); if (!form) return;
-    try { var d = new FormData(form); sendEvent('generate_lead',{ form_name:'contact', company:d.get('company')||'', country:d.get('country')||'' }); } catch(_){}
-  });
-})();
+})(); 

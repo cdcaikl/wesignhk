@@ -1,20 +1,18 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <!-- GA4 (consent-first) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4KXSV67GL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('consent','default',{ ad_storage:'denied', analytics_storage:'denied', functionality_storage:'granted', security_storage:'granted' });
-    gtag('js', new Date());
-    gtag('config','G-D4KXSV67GL', { anonymize_ip:true });
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted'});
+    gtag('js', new Date()); gtag('config','G-D4KXSV67GL',{anonymize_ip:true});
   </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>お問い合わせ | We Sign</title>
-  <meta name="description" content="We Sign へのお問い合わせ。海外タイムゾーンでも対応します。" />
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>お問い合わせ | WeSign</title>
+  <meta name="description" content="WeSign へのお問い合わせ。"/>
+  <link rel="stylesheet" href="/assets/css/styles.css"/>
 </head>
 <body class="theme-light">
 
@@ -24,9 +22,7 @@
       <img src="/images/logo.webp" alt="WeSign" class="brand-logo" width="32" height="32">
       <span>WeSign</span>
     </a>
-    <ul>
-      <li><a href="/index-ja.html">総合情報・サービス</a></li><li><a href="/company-ja.html">会社概要</a></li><li><a href="/environment-ja.html">環境への取り組み</a></li><li><a class="active" href="/contact-ja.html">お問い合わせ</a></li><li><a href="/contact.html">EN</a></li>
-    </ul>
+    <ul><li><a href="/index-ja.html">総合情報・サービス</a></li><li><a href="/company-ja.html">会社概要</a></li><li><a href="/environment-ja.html">環境への取り組み</a></li><li><a class="active" href="/contact-ja.html">お問い合わせ</a></li><li><a href="/contact.html">EN</a></li></ul>
   </div>
 </nav>
 
@@ -40,7 +36,7 @@
 
 <section class="section about-diagonal">
   <div class="container">
-<div class="grid" style="grid-template-columns:2fr 1fr;gap:24px"><div><h2>メッセージ送信</h2><form id="contact-form" method="POST" action="/contact-ja.html"><div class="grid" style="grid-template-columns:1fr 1fr;gap:12px"><div><label>お名前</label><input name="name" required></div><div><label>会社名</label><input name="company"></div><div><label>メール</label><input type="email" name="email" required></div><div><label>電話</label><input name="phone"></div><div class="full"><label>国/地域</label><input name="country"></div><div class="full"><label>お問い合わせ内容</label><textarea name="message" rows="6" required></textarea></div><div class="full"><div class="muted" style="font-size:13px">* 送信により <a href="/privacy-ja.html" target="_blank">プライバシーポリシー</a> に同意したものとみなします。</div></div></div><div style="margin-top:12px"><button class="btn btn-primary" type="submit">送信</button> <span id="form-result" class="muted" style="margin-left:10px"></span></div></form></div><div><h2>連絡先</h2><p class="muted">WESIGN TECHNOLOGIES LIMITED</p><p class="muted">RM 12, 6/F THE CLOUD 111, TAI KOK TSUI, HONG KONG.</p><p class="muted">Tel: +86-13829832027<br>Email: <a href="mailto:info@wesignhk.com">info@wesignhk.com</a></p></div></div>  </div>
+<div class='grid' style='grid-template-columns:2fr 1fr;gap:24px'><div><h2>メッセージ送信</h2><form id='contact-form'><div class='grid' style='grid-template-columns:1fr 1fr;gap:12px'><div><label>お名前</label><input name='name' required></div><div><label>会社名</label><input name='company'></div><div><label>メール</label><input type='email' name='email' required></div><div><label>電話</label><input name='phone'></div><div class='full'><label>国/地域</label><input name='country'></div><div class='full'><label>お問い合わせ内容</label><textarea name='message' rows='6' required></textarea></div><div class='full'><div class='muted' style='font-size:13px'>* 送信により <a href='/privacy-ja.html' target='_blank'>プライバシーポリシー</a> に同意したものとみなします。</div></div></div><div style='margin-top:12px'><button class='btn btn-primary' type='submit'>送信</button> <span id='form-result' class='muted' style='margin-left:10px'></span></div></form></div><div><h2>連絡先</h2><p class='muted'>WESIGN TECHNOLOGIES LIMITED</p><p class='muted'>RM 12, 6/F THE CLOUD 111, TUNG CHAU ST, TAI KOK TSUI, HONG KONG.</p><p class='muted'>Tel: +86-13829832027<br>Email: <a href='mailto:info@wesignhk.com'>info@wesignhk.com</a></p></div></div>  </div>
 </section>
 
 <footer class="footer-light">
@@ -59,26 +55,22 @@
     </div>
     <div>
       <h4>ポリシー</h4>
-      <div><a href="/privacy.html">Privacy Policy</a></div>
-      <div><a href="/terms.html">Terms of Use</a></div>
-      <div><a href="/compliance.html">Compliance Statement</a></div>
+      <div><a href="/privacy-ja.html">Privacy Policy</a></div>
+      <div><a href="/terms-ja.html">Terms of Use</a></div>
+      <div><a href="/compliance-ja.html">Compliance Statement</a></div>
     </div>
   </div>
   <div class="container tiny muted">© 2025 WESIGN TECHNOLOGIES LIMITED.</div>
 </footer>
-
 <script src="/assets/js/site.js"></script>
 </body>
 </html>
 
 <script>
-  const form = document.querySelector('#contact-form');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const d = new FormData(form);
-    const subject = `Website inquiry from ${d.get('name')||''}`;
-    const body = [...d.entries()].map(([k,v])=>`${k}: ${v}`).join('%0A');
-    location.href = `mailto:info@wesignhk.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    document.getElementById('form-result').textContent = 'メールクライアントを開きます...';
-  });
+  const form=document.querySelector('#contact-form');
+  form.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);
+    const subject=`Website inquiry from ${d.get('name')||''}`;
+    const body=[...d.entries()].map(([k,v])=>`${k}: ${v}`).join('%0A');
+    location.href=`mailto:info@wesignhk.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    document.getElementById('form-result').textContent='メールクライアントを開きます...';});
 </script>
