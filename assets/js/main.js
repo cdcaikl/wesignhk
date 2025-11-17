@@ -1,1 +1,0 @@
-async function loadJSON(p){try{const r=await fetch(p);return await r.json()}catch(e){return []}}(async()=>{const n=await loadJSON('assets/js/data/notices-cn.json');const box=document.getElementById('cn-notices');if(box){n.forEach(i=>box.insertAdjacentHTML('beforeend',`<div class="card"><b>${i.date}</b> ${i.title}</div>`))}})();

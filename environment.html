@@ -1,88 +1,46 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- GA4（WeSignHK）：默认先拒绝，待同意后再开启 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D4KXSV67GL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-
-  // 先“拒绝”非必要存储（合规做法）
-  gtag('consent', 'default', {
-    ad_storage: 'denied',
-    analytics_storage: 'denied',
-    functionality_storage: 'granted',
-    security_storage: 'granted'
-  });
-
-  gtag('js', new Date());
-  gtag('config', 'G-D4KXSV67GL', { anonymize_ip: true });
-</script>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Environmental Commitment | We Sign</title>
-<meta name="description" content="Environmental and quality commitment of We Sign, including policy highlights and certifications placeholders." />
-<link rel="stylesheet" href="/assets/css/styles.css" />
+  <!-- GA4 (consent-first) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4KXSV67GL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent','default',{ ad_storage:'denied', analytics_storage:'denied', functionality_storage:'granted', security_storage:'granted' });
+    gtag('js', new Date());
+    gtag('config','G-D4KXSV67GL', { anonymize_ip:true });
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Environmental Commitment | We Sign</title>
+  <meta name="description" content="Environmental & quality commitment including compliance and lab verification." />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body class="theme-light">
 
 <nav class="nav nav-light">
   <div class="container inner">
     <a class="brand" href="/index.html">
-      <img src="/images/logo.webp" alt="We Sign" class="brand-logo" width="32" height="32">
-      <span>We Sign</span>
+      <img src="/images/logo.webp" alt="WeSign" class="brand-logo" width="32" height="32">
+      <span>WeSign</span>
     </a>
     <ul>
-      <li><a href="/index.html">General Information &amp; Services</a></li>
-      <li><a href="/company.html">Company Profile</a></li>
-      <li><a class="active" href="/environment.html">Environmental Commitment</a></li>
-      <li><a href="/contact.html">Contact Us</a></li>
+      <li><a href="/index.html">General Information &amp; Services</a></li><li><a href="/company.html">Company Profile</a></li><li><a class="active" href="/environment.html">Environmental Commitment</a></li><li><a href="/contact.html">Contact Us</a></li><li><a href="/environment-ja.html">日本語</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero hero-diagonal" style="--hero-img:url('/images/shenzhen-1.webp')">
   <div class="container">
-    <p class="kicker">Sustainability &amp; Quality</p>
+    <p class="kicker">Sustainability & Quality</p>
     <h1>Environmental Commitment</h1>
-    <p class="sub">Reliable supply with responsible operations</p>
+    <p class="sub">Responsible operations & supply</p>
   </div>
 </header>
 
 <section class="section about-diagonal">
   <div class="container">
-    <h2>Policy Highlights</h2>
-    <div class="grid cards">
-      <div class="card">
-        <h3>Compliance</h3>
-        <p>We align with applicable environmental regulations and customer requirements, and promote responsible sourcing across our supply chain.</p>
-      </div>
-      <div class="card">
-        <h3>Waste &amp; Packaging</h3>
-        <p>We optimize packaging and encourage reuse where feasible; we sort, handle and dispose waste through licensed providers.</p>
-      </div>
-      <div class="card">
-        <h3>Quality &amp; Counterfeit Mitigation</h3>
-        <p>Supplier vetting, traceability, and incoming inspections to reduce counterfeit risks in electronic components.</p>
-      </div>
-      <div class="card">
-        <h3>Continuous Improvement</h3>
-        <p>We track KPIs and customer feedback, and pursue ongoing improvement of environmental and quality performance.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2>Certifications</h2>
-    <p class="lead">Add your ISO or other certificates here when available (e.g., ISO 9001/14001/27001).</p>
-    <div class="grid cards">
-      <div class="card"><h3>ISO 9001</h3><p>Quality Management System — <em>placeholder</em></p></div>
-      <div class="card"><h3>ISO 14001</h3><p>Environmental Management System — <em>placeholder</em></p></div>
-      <div class="card"><h3>ISO 27001</h3><p>Information Security Management — <em>placeholder</em></p></div>
-    </div>
-  </div>
+<h2>Policy Highlights</h2><div class="grid cards"><div class="card"><h3>Compliance</h3><p>We align to regulations and promote responsible sourcing.</p></div><div class="card"><h3>Waste & Packaging</h3><p>Optimize packaging; proper waste handling via licensed providers.</p></div><div class="card"><h3>Counterfeit Mitigation</h3><p>Supplier vetting, traceability & incoming inspection.</p></div><div class="card"><h3>Continuous Improvement</h3><p>KPI tracking and customer feedback loops.</p></div></div>  </div>
 </section>
 
 <footer class="footer-light">
@@ -96,7 +54,7 @@
     <div>
       <h4>Company</h4>
       <div><a href="/company.html">Company Profile</a></div>
-      <div><a class="active" href="/environment.html">Environmental Commitment</a></div>
+      <div><a href="/environment.html">Environmental Commitment</a></div>
       <div><a href="/contact.html">Contact Us</a></div>
     </div>
     <div>
@@ -108,6 +66,7 @@
   </div>
   <div class="container tiny muted">© 2025 WESIGN TECHNOLOGIES LIMITED.</div>
 </footer>
+
 <script src="/assets/js/site.js"></script>
 </body>
 </html>
