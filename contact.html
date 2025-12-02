@@ -22,7 +22,13 @@
       <img src="/images/logo.webp" alt="WeSign" class="brand-logo" width="32" height="32">
       <span>WeSign</span>
     </a>
-    <ul><li><a href="/index.html">General Information &amp; Services</a></li><li><a href="/company.html">Company Profile</a></li><li><a href="/environment.html">Environmental Commitment</a></li><li><a class="active" href="/contact.html">Contact Us</a></li><li><a href="/contact-ja.html">日本語</a></li></ul>
+    <ul>
+      <li><a href="/index.html">General Information &amp; Services</a></li>
+      <li><a href="/company.html">Company Profile</a></li>
+      <li><a href="/environment.html">Environmental Commitment</a></li>
+      <li><a class="active" href="/contact.html">Contact Us</a></li>
+      <li><a href="/contact-ja.html">日本語</a></li>
+    </ul>
   </div>
 </nav>
 
@@ -36,7 +42,31 @@
 
 <section class="section about-diagonal">
   <div class="container">
-<div class='grid' style='grid-template-columns:2fr 1fr;gap:24px'><div><h2>Send a Message</h2><form id='contact-form'><div class='grid' style='grid-template-columns:1fr 1fr;gap:12px'><div><label>Name</label><input name='name' required></div><div><label>Company</label><input name='company'></div><div><label>Email</label><input type='email' name='email' required></div><div><label>Phone</label><input name='phone'></div><div class='full'><label>Country/Region</label><input name='country'></div><div class='full'><label>Message</label><textarea name='message' rows='6' required></textarea></div><div class='full'><div class='muted' style='font-size:13px'>* By submitting, you agree to our <a href='/privacy.html' target='_blank'>Privacy Policy</a>.</div></div></div><div style='margin-top:12px'><button class='btn btn-primary' type='submit'>Send</button> <span id='form-result' class='muted' style='margin-left:10px'></span></div></form></div><div><h2>Contact</h2><p class='muted'>WESIGN TECHNOLOGIES LIMITED</p><p class='muted'>RM 12, 6/F THE CLOUD 111, TUNG CHAU ST, TAI KOK TSUI, HONG KONG.</p><p class='muted'>Tel: +86-13829832027<br>Email: <a href='mailto:info@wesignhk.com'>info@wesignhk.com</a></p></div></div>  </div>
+    <div class="grid" style="grid-template-columns:1fr;gap:24px">
+      <div>
+        <h2>Send a Message</h2>
+        <form id="contact-form">
+          <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px">
+            <div><label>Name</label><input name="name" required></div>
+            <div><label>Company</label><input name="company"></div>
+            <div><label>Email</label><input type="email" name="email" required></div>
+            <div><label>Phone</label><input name="phone"></div>
+            <div class="full"><label>Country/Region</label><input name="country"></div>
+            <div class="full"><label>Message</label><textarea name="message" rows="6" required></textarea></div>
+            <div class="full">
+              <div class="muted" style="font-size:13px">
+                * By submitting, you agree to our <a href="/privacy.html" target="_blank">Privacy Policy</a>.
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <button class="btn btn-primary" type="submit">Send</button>
+            <span id="form-result" class="muted" style="margin-left:10px"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer class="footer-light">
@@ -62,15 +92,18 @@
   </div>
   <div class="container tiny muted">© 2025 WESIGN TECHNOLOGIES LIMITED.</div>
 </footer>
-<script src="/assets/js/site.js"></script>
-</body>
-</html>
 
+<script src="/assets/js/site.js"></script>
 <script>
   const form=document.querySelector('#contact-form');
-  form.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const d=new FormData(form);
     const subject=`Website inquiry from ${d.get('name')||''}`;
     const body=[...d.entries()].map(([k,v])=>`${k}: ${v}`).join('%0A');
     location.href=`mailto:info@wesignhk.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    document.getElementById('form-result').textContent='Opening your email client...';});
+    document.getElementById('form-result').textContent='Opening your email client...';
+  });
 </script>
+</body>
+</html>
